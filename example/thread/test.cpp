@@ -22,10 +22,9 @@ public:
     void run() {
         int i = 0;
         while(isRunning()) {
-            sleep_ms(100);
-            std::cout << "Foo running secs: " << ++i/10.0 << std::endl;
+            sleep_ms(1000);
+            std::cout << "Foo running secs: " << ++i << std::endl;
         }
-
     }
 
     void startFunc() {
@@ -52,10 +51,9 @@ public:
     void run() override {
         int i = 0;
         while(isRunning()) {
-            sleep_ms(100);
-            std::cout << "Bar running secs: " << ++i/10.0 << std::endl;
+            sleep_ms(1000);
+            std::cout << "Bar running secs: " << ++i << std::endl;
         }
-
     }
 
     void startFunc() {
@@ -71,17 +69,22 @@ private:
     Connection stop_con_;
 };
 
-int main() {
+void test_thread() {
     Foo foo;
-    Bar bar;
+    //Bar bar;
 
     foo.start();
-    bar.start();
+    //bar.start();
 
-    sleep_ms(5e3);
+    foo.wait(5000);
     foo.stop();
-    bar.stop();
+    std::cout << "STOP!!!!!!!!"<<std::endl;
+    foo.wait();
 
-    sleep_ms(1e3);
+    //bar.stop();
+}
+
+int main() {
+    test_thread();
     return 0;
 }

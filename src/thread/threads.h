@@ -11,6 +11,7 @@
 #include "signals/signals.h"
 #include "share/ptr_extend.h"
 
+#include <iostream>
 #include <future>
 #include <thread>
 
@@ -55,8 +56,9 @@ public:
         }
 
         int elapsed_ms = 0;
-        while (!isFinished() && ++elapsed_ms < wait_ms) {
+        while (!isFinished() && 2*elapsed_ms++ < wait_ms) { ///*2 because isFinished cost 1ms
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            //std::cout << "ELAPSED: " << elapsed_ms << std::endl;
         }
     }
 
@@ -69,7 +71,7 @@ public:
         if (!thread_) {
             return true;
         }
-        return future_.wait_for(std::chrono::milliseconds(0)) == std::future_status::ready;
+        return future_.wait_for(std::chrono::milliseconds(0)) == std::future_status::ready; ///cost 1ms
     }
 
     ///\brief Get the thread id
