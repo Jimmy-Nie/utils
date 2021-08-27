@@ -19,6 +19,9 @@
 
 ###1. 系统类
 #### 1) Timer
+> - 
+> - 
+
 #### 2) thread
 > - 线程：所有线程均继承它，可以很好的实现：同时开启，同时关闭（信号触发的形式）
 > - 依赖：signals & share 目录的文件
@@ -28,6 +31,9 @@
 > - 改造：支持单例模式，支持停止运行操作
 > - github地址：https://github.com/progschj/ThreadPool
 #### 4) memory_pool
+> - 内存池：避免频繁的new/delete导致性能降低和内存碎片化
+> - 具体说明: memory_pool/ReadMe
+>
 
 #### 5) pubsub
 > - 发布/订阅机制：
