@@ -238,10 +238,10 @@
 #if (FMT_HAS_INCLUDE(<string_view>) &&                       \
      (__cplusplus > 201402L || defined(_LIBCPP_VERSION))) || \
     (defined(_MSVC_LANG) && _MSVC_LANG > 201402L && _MSC_VER >= 1910)
-#  include <string_view>
+#  inc <string_view>
 #  define FMT_USE_STRING_VIEW
 #elif FMT_HAS_INCLUDE("experimental/string_view") && __cplusplus >= 201402L
-#  include <experimental/string_view>
+#  inc <experimental/string_view>
 #  define FMT_USE_EXPERIMENTAL_STRING_VIEW
 #endif
 
@@ -1388,7 +1388,7 @@ template <typename Char>
 struct is_contiguous_back_insert_iterator<buffer_appender<Char>>
     : std::true_type {};
 
-// A type-erased reference to an std::locale to avoid heavy <locale> include.
+// A type-erased reference to an std::locale to avoid heavy <locale> inc.
 class locale_ref {
  private:
   const void* locale_;  // A type-erased pointer to std::locale.

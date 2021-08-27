@@ -37,7 +37,7 @@ SYNOPSIS
 
        Scans GTEST_ROOT_DIR for Google Test source code, and generates
        two files: OUTPUT_DIR/gtest/gtest.h and OUTPUT_DIR/gtest/gtest-all.cc.
-       Then you can build your tests by adding OUTPUT_DIR to the include
+       Then you can build your tests by adding OUTPUT_DIR to the inc
        search path and linking with OUTPUT_DIR/gtest/gtest-all.cc.  These
        two files contain everything you need to use Google Test.  Hence
        you can "install" Google Test by copying them to wherever you want.
@@ -70,15 +70,15 @@ import sys
 # Test root directory.
 DEFAULT_GTEST_ROOT_DIR = os.path.join(os.path.dirname(__file__), '..')
 
-# Regex for matching '#include "gtest/..."'.
-INCLUDE_GTEST_FILE_REGEX = re.compile(r'^\s*#\s*include\s*"(gtest/.+)"')
+# Regex for matching '#inc "gtest/..."'.
+INCLUDE_GTEST_FILE_REGEX = re.compile(r'^\s*#\s*inc\s*"(gtest/.+)"')
 
-# Regex for matching '#include "src/..."'.
-INCLUDE_SRC_FILE_REGEX = re.compile(r'^\s*#\s*include\s*"(src/.+)"')
+# Regex for matching '#inc "src/..."'.
+INCLUDE_SRC_FILE_REGEX = re.compile(r'^\s*#\s*inc\s*"(src/.+)"')
 
 # Where to find the source seed files.
-GTEST_H_SEED = 'include/gtest/gtest.h'
-GTEST_SPI_H_SEED = 'include/gtest/gtest-spi.h'
+GTEST_H_SEED = 'inc/gtest/gtest.h'
+GTEST_SPI_H_SEED = 'inc/gtest/gtest-spi.h'
 GTEST_ALL_CC_SEED = 'src/gtest-all.cc'
 
 # Where to put the generated files.
@@ -165,8 +165,8 @@ def FuseGTestH(gtest_root, output_dir):
     for line in open(os.path.join(gtest_root, gtest_header_path), 'r'):
       m = INCLUDE_GTEST_FILE_REGEX.match(line)
       if m:
-        # It's '#include "gtest/..."' - let's process it recursively.
-        ProcessFile('include/' + m.group(1))
+        # It's '#inc "gtest/..."' - let's process it recursively.
+        ProcessFile('inc/' + m.group(1))
       else:
         # Otherwise we copy the line unchanged to the output file.
         output_file.write(line)
@@ -193,24 +193,24 @@ def FuseGTestAllCcToFile(gtest_root, output_file):
     for line in open(os.path.join(gtest_root, gtest_source_file), 'r'):
       m = INCLUDE_GTEST_FILE_REGEX.match(line)
       if m:
-        if 'include/' + m.group(1) == GTEST_SPI_H_SEED:
-          # It's '#include "gtest/gtest-spi.h"'.  This file is not
+        if 'inc/' + m.group(1) == GTEST_SPI_H_SEED:
+          # It's '#inc "gtest/gtest-spi.h"'.  This file is not
           # #included by "gtest/gtest.h", so we need to process it.
           ProcessFile(GTEST_SPI_H_SEED)
         else:
-          # It's '#include "gtest/foo.h"' where foo is not gtest-spi.
-          # We treat it as '#include "gtest/gtest.h"', as all other
+          # It's '#inc "gtest/foo.h"' where foo is not gtest-spi.
+          # We treat it as '#inc "gtest/gtest.h"', as all other
           # gtest headers are being fused into gtest.h and cannot be
           # #included directly.
 
-          # There is no need to #include "gtest/gtest.h" more than once.
+          # There is no need to #inc "gtest/gtest.h" more than once.
           if not GTEST_H_SEED in processed_files:
             processed_files.add(GTEST_H_SEED)
-            output_file.write('#include "%s"\n' % (GTEST_H_OUTPUT,))
+            output_file.write('#inc "%s"\n' % (GTEST_H_OUTPUT,))
       else:
         m = INCLUDE_SRC_FILE_REGEX.match(line)
         if m:
-          # It's '#include "src/foo"' - let's process it recursively.
+          # It's '#inc "src/foo"' - let's process it recursively.
           ProcessFile(m.group(1))
         else:
           output_file.write(line)

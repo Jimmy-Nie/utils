@@ -1303,7 +1303,7 @@ typedef struct gzFile_s *gzFile;    /* semi-opaque gzip file descriptor */
 ZEXTERN gzFile ZEXPORT gzopen OF((const char *path, const char *mode));
 
      Opens a gzip (.gz) file for reading or writing.  The mode parameter is as
-   in fopen ("rb" or "wb") but can also include a compression level ("wb9") or
+   in fopen ("rb" or "wb") but can also inc a compression level ("wb9") or
    a strategy: 'f' for filtered data as in "wb6f", 'h' for Huffman-only
    compression as in "wb1h", 'R' for run-length encoding as in "wb1R", or 'F'
    for fixed code compression as in "wb9F".  (See the description of
@@ -1587,7 +1587,7 @@ ZEXTERN z_off_t ZEXPORT gzoffset OF((gzFile file));
      Returns the current offset in the file being read or written.  This offset
    includes the count of bytes that precede the gzip stream, for example when
    appending or when using gzdopen() for reading.  When reading, the offset
-   does not include as yet unused buffered input.  This information can be used
+   does not inc as yet unused buffered input.  This information can be used
    for a progress indicator.  On error, gzoffset() returns -1.
 */
 
@@ -1623,7 +1623,7 @@ ZEXTERN int ZEXPORT gzdirect OF((gzFile file));
    requested ("wT" for the gzopen() mode), or false (0) otherwise.  (Note:
    gzdirect() is not needed when writing.  Transparent writing must be
    explicitly requested, so the application already knows the answer.  When
-   linking statically, using gzdirect() will include all of the zlib code for
+   linking statically, using gzdirect() will inc all of the zlib code for
    gzip file reading and decompression, which may not be desired.)
 */
 

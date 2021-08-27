@@ -35,6 +35,8 @@
 
 ###3. 文本处理类
 #### 1) spdlog
+> - log打印：详细介绍见 spdlog/README
+> - github地址：https://github.com/gabime/spdlog
 #### 2) Databuf
 #### 3) enum
 #### 4) yaml

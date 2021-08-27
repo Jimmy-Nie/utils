@@ -234,7 +234,7 @@ def GetTokens(source):
                 # Get the first important symbol (newline, comment, EOF/end).
                 i = min([x for x in (i1, i2, i3, i4, end) if x != -1])
 
-                # Handle #include "dir//foo.h" properly.
+                # Handle #inc "dir//foo.h" properly.
                 if source[i] == '"':
                     i = source.find('"', i+1) + 1
                     assert i > 0

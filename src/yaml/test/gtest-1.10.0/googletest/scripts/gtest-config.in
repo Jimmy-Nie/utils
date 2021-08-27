@@ -217,7 +217,7 @@ if test "${this_bindir}" = "${this_bindir%${bindir}}"; then
   gtest_libs="${build_dir}/lib/libgtest.la @PTHREAD_CFLAGS@ @PTHREAD_LIBS@"
   gtest_ldflags=""
 
-  # We provide hooks to include from either the source or build dir, where the
+  # We provide hooks to inc from either the source or build dir, where the
   # build dir is always preferred. This will potentially allow us to write
   # build rules for generated headers and have them automatically be preferred
   # over provided versions.

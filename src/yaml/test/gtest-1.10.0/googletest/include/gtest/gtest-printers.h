@@ -112,9 +112,9 @@
 #include "gtest/internal/gtest-port.h"
 
 #if GTEST_HAS_ABSL
-#include "absl/strings/string_view.h"
-#include "absl/types/optional.h"
-#include "absl/types/variant.h"
+#inc "absl/strings/string_view.h"
+#inc "absl/types/optional.h"
+#inc "absl/types/variant.h"
 #endif  // GTEST_HAS_ABSL
 
 namespace testing {
@@ -921,7 +921,7 @@ template <typename T>
 }  // namespace testing
 
 // Include any custom printer added by the local installation.
-// We must include this header at the end to make sure it can use the
+// We must inc this header at the end to make sure it can use the
 // declarations from this file.
 #include "gtest/internal/custom/gtest-printers.h"
 

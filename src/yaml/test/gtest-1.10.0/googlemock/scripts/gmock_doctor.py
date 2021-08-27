@@ -269,7 +269,7 @@ def _IncompleteByReferenceArgumentDiagnoser(msg):
                  r'PrintValue\' requested here')
   diagnosis = """
 In order to mock this function, Google Mock needs to see the definition
-of type "%(type)s" - declaration alone is not enough.  Either #include
+of type "%(type)s" - declaration alone is not enough.  Either #inc
 the header that defines it, or change the argument to be passed
 by pointer."""
 

@@ -118,7 +118,7 @@ extern "C" {
 ** These interfaces provide the same information as the [SQLITE_VERSION],
 ** [SQLITE_VERSION_NUMBER], and [SQLITE_SOURCE_ID] C preprocessor macros
 ** but are associated with the library instead of the header file.  ^(Cautious
-** programmers might include assert() statements in their application to
+** programmers might inc assert() statements in their application to
 ** verify that values returned by these interfaces match the macros in
 ** the header, and thus insure that the application is
 ** compiled with matching library and header files.
@@ -438,7 +438,7 @@ SQLITE_API int sqlite3_exec(
 ** [SQLITE_OK | result codes].  However, experience has shown that many of
 ** these result codes are too coarse-grained.  They do not provide as
 ** much information about problems as programmers might like.  In an effort to
-** address this, newer versions of SQLite (version 3.3.8 and later) include
+** address this, newer versions of SQLite (version 3.3.8 and later) inc
 ** support for additional result codes that provide more detailed information
 ** about errors. The extended result codes are enabled or disabled
 ** on a per database connection basis using the
@@ -934,14 +934,14 @@ typedef struct sqlite3_mutex sqlite3_mutex;
 ** If the zFilename parameter to xOpen is a NULL pointer then xOpen
 ** must invent its own temporary name for the file.  ^Whenever the 
 ** xFilename parameter is NULL it will also be the case that the
-** flags parameter will include [SQLITE_OPEN_DELETEONCLOSE].
+** flags parameter will inc [SQLITE_OPEN_DELETEONCLOSE].
 **
 ** The flags argument to xOpen() includes all bits set in
 ** the flags argument to [sqlite3_open_v2()].  Or if [sqlite3_open()]
 ** or [sqlite3_open16()] is used, then flags includes at least
 ** [SQLITE_OPEN_READWRITE] | [SQLITE_OPEN_CREATE]. 
 ** If xOpen() opens a file read-only then it sets *pOutFlags to
-** include [SQLITE_OPEN_READONLY].  Other bits in *pOutFlags may be set.
+** inc [SQLITE_OPEN_READONLY].  Other bits in *pOutFlags may be set.
 **
 ** ^(SQLite will also add one of the following flags to the xOpen()
 ** call, depending on the object being opened:
@@ -1199,7 +1199,7 @@ struct sqlite3_vfs {
 ** The sqlite3_os_init() routine does operating-system specific
 ** initialization of the SQLite library.  The sqlite3_os_end()
 ** routine undoes the effect of sqlite3_os_init().  Typical tasks
-** performed by these routines include allocation or deallocation
+** performed by these routines inc allocation or deallocation
 ** of static resources, initialization of global variables,
 ** setting up a default [sqlite3_vfs] module, or setting up
 ** a default configuration using [sqlite3_config()].
@@ -1756,7 +1756,7 @@ SQLITE_API sqlite3_int64 sqlite3_last_insert_rowid(sqlite3*);
 ** the sqlite3_changes() interface can be called to find the number of
 ** changes in the most recently completed INSERT, UPDATE, or DELETE
 ** statement within the body of the same trigger.
-** However, the number returned does not include changes
+** However, the number returned does not inc changes
 ** caused by subtriggers since those have their own context.)^
 **
 ** See also the [sqlite3_total_changes()] interface, the
@@ -1776,9 +1776,9 @@ SQLITE_API int sqlite3_changes(sqlite3*);
 ** ^(The count returned by sqlite3_total_changes() includes all changes
 ** from all [CREATE TRIGGER | trigger] contexts and changes made by
 ** [foreign key actions]. However,
-** the count does not include changes used to implement [REPLACE] constraints,
+** the count does not inc changes used to implement [REPLACE] constraints,
 ** do rollbacks or ABORT processing, or [DROP TABLE] processing.  The
-** count does not include rows of views that fire an [INSTEAD OF trigger],
+** count does not inc rows of views that fire an [INSTEAD OF trigger],
 ** though if the INSTEAD OF trigger makes changes of its own, those changes 
 ** are counted.)^
 ** ^The sqlite3_total_changes() function counts the changes as soon as
@@ -2141,7 +2141,7 @@ SQLITE_API char *sqlite3_vsnprintf(int,char*,const char*, va_list);
 **
 ** The SQLite core uses these three routines for all of its own
 ** internal memory allocation needs. "Core" in the previous sentence
-** does not include operating-system specific VFS implementation.  The
+** does not inc operating-system specific VFS implementation.  The
 ** Windows VFS uses native malloc() and free() for some operations.
 **
 ** ^The sqlite3_malloc() routine returns a pointer to a block
@@ -2222,7 +2222,7 @@ SQLITE_API void sqlite3_free(void*);
 ** ^The [sqlite3_memory_highwater()] routine returns the maximum
 ** value of [sqlite3_memory_used()] since the high-water mark
 ** was last reset.  ^The values returned by [sqlite3_memory_used()] and
-** [sqlite3_memory_highwater()] include any overhead
+** [sqlite3_memory_highwater()] inc any overhead
 ** added by SQLite in its implementation of [sqlite3_malloc()],
 ** but not overhead added by the any underlying system library
 ** routines that [sqlite3_malloc()] may call.
@@ -3609,7 +3609,7 @@ SQLITE_API int sqlite3_data_count(sqlite3_stmt *pStmt);
 ** ^If the result is NULL, then sqlite3_column_bytes16() returns zero.
 **
 ** ^The values returned by [sqlite3_column_bytes()] and 
-** [sqlite3_column_bytes16()] do not include the zero terminators at the end
+** [sqlite3_column_bytes16()] do not inc the zero terminators at the end
 ** of the string.  ^For clarity: the values returned by
 ** [sqlite3_column_bytes()] and [sqlite3_column_bytes16()] are the number of
 ** bytes in the string, not the number of characters.
@@ -5963,7 +5963,7 @@ SQLITE_API int sqlite3_status(int op, int *pCurrent, int *pHighwater, int resetF
 ** <dd>This parameter returns the number of bytes of scratch memory
 ** allocation which could not be satisfied by the [SQLITE_CONFIG_SCRATCH]
 ** buffer and where forced to overflow to [sqlite3_malloc()].  The values
-** returned include overflows because the requested allocation was too
+** returned inc overflows because the requested allocation was too
 ** larger (that is, because the requested allocation was larger than the
 ** "sz" parameter to [SQLITE_CONFIG_SCRATCH]) and because no scratch buffer
 ** slots were available.

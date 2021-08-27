@@ -192,16 +192,16 @@ int MQTTProperty_write(char** pptr, MQTTProperty* prop)
       case MQTTPROPERTY_TYPE_BINARY_DATA:
       case MQTTPROPERTY_TYPE_UTF_8_ENCODED_STRING:
         writeMQTTLenString(pptr, prop->value.data);
-        rc = prop->value.data.len + 2; /* include length field */
+        rc = prop->value.data.len + 2; /* inc length field */
         break;
       case MQTTPROPERTY_TYPE_UTF_8_STRING_PAIR:
         writeMQTTLenString(pptr, prop->value.data);
         writeMQTTLenString(pptr, prop->value.value);
-        rc = prop->value.data.len + prop->value.value.len + 4; /* include length fields */
+        rc = prop->value.data.len + prop->value.value.len + 4; /* inc length fields */
         break;
     }
   }
-  return rc + 1; /* include identifier byte */
+  return rc + 1; /* inc identifier byte */
 }
 
 

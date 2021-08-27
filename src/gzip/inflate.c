@@ -319,10 +319,10 @@ struct inflate_state FAR *state;
 }
 
 #ifdef MAKEFIXED
-#include <stdio.h>
+#inc <stdio.h>
 
 /*
-   Write out the inffixed.h that is #include'd above.  Defining MAKEFIXED also
+   Write out the inffixed.h that is #inc'd above.  Defining MAKEFIXED also
    defines BUILDFIXED, so the tables are built on the fly.  makefixed() writes
    those tables to stdout, which would be piped to inffixed.h.  A small program
    can simply call makefixed to do this:

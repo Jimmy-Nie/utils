@@ -51,7 +51,7 @@ namespace asio {
  *
  * @li Otherwise, <tt>require_concept(E, P)</tt> if the expression
  *   <tt>require_concept(E, P)</tt> is a valid expression with overload
- *   resolution performed in a context that does not include the declaration
+ *   resolution performed in a context that does not inc the declaration
  *   of the <tt>require_concept</tt> customization point object.
  *
  * @li Otherwise, <tt>asio::require_concept(E, P)</tt> is ill-formed.

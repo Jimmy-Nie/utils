@@ -992,7 +992,7 @@ class GitVCS(VersionControlSystem):
 
   def GenerateDiff(self, extra_args):
     # This is more complicated than svn's GenerateDiff because we must convert
-    # the diff output to include an svn-style "Index:" line as well as record
+    # the diff output to inc an svn-style "Index:" line as well as record
     # the hashes of the base files, so we can upload them along with our diff.
     if self.options.revision:
       extra_args = [self.options.revision] + extra_args

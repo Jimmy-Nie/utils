@@ -39,7 +39,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>set_done(R)</tt>, if that expression is valid, with
  * overload resolution performed in a context that includes the declaration
- * <tt>void set_done();</tt> and that does not include a declaration of
+ * <tt>void set_done();</tt> and that does not inc a declaration of
  * <tt>execution::set_done</tt>. If the function selected by overload
  * resolution does not signal the receiver <tt>R</tt>'s done channel, the
  * program is ill-formed with no diagnostic required.

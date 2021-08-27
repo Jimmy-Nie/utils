@@ -41,7 +41,7 @@ namespace execution {
  * @li Otherwise, <tt>schedule(s)</tt>, if that expression is valid and its
  *   type models <tt>sender</tt> with overload resolution performed in a context
  *   that includes the declaration <tt>void schedule();</tt> and that does not
- *   include a declaration of <tt>execution::schedule</tt>.
+ *   inc a declaration of <tt>execution::schedule</tt>.
  *
  * @li Otherwise, <tt>S</tt> if <tt>S</tt> satisfies <tt>executor</tt>.
  *

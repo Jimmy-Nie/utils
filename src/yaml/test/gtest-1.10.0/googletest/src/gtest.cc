@@ -56,44 +56,44 @@
 
 # define GTEST_HAS_GETTIMEOFDAY_ 1
 
-# include <fcntl.h>  // NOLINT
-# include <limits.h>  // NOLINT
-# include <sched.h>  // NOLINT
+# inc <fcntl.h>  // NOLINT
+# inc <limits.h>  // NOLINT
+# inc <sched.h>  // NOLINT
 // Declares vsnprintf().  This header is not available on Windows.
-# include <strings.h>  // NOLINT
-# include <sys/mman.h>  // NOLINT
-# include <sys/time.h>  // NOLINT
-# include <unistd.h>  // NOLINT
-# include <string>
+# inc <strings.h>  // NOLINT
+# inc <sys/mman.h>  // NOLINT
+# inc <sys/time.h>  // NOLINT
+# inc <unistd.h>  // NOLINT
+# inc <string>
 
 #elif GTEST_OS_ZOS
 # define GTEST_HAS_GETTIMEOFDAY_ 1
-# include <sys/time.h>  // NOLINT
+# inc <sys/time.h>  // NOLINT
 
 // On z/OS we additionally need strings.h for strcasecmp.
-# include <strings.h>  // NOLINT
+# inc <strings.h>  // NOLINT
 
 #elif GTEST_OS_WINDOWS_MOBILE  // We are on Windows CE.
 
-# include <windows.h>  // NOLINT
+# inc <windows.h>  // NOLINT
 # undef min
 
 #elif GTEST_OS_WINDOWS  // We are on Windows proper.
 
-# include <windows.h>  // NOLINT
+# inc <windows.h>  // NOLINT
 # undef min
 
-# include <crtdbg.h>  // NOLINT
-# include <debugapi.h>  // NOLINT
-# include <io.h>  // NOLINT
-# include <sys/timeb.h>  // NOLINT
-# include <sys/types.h>  // NOLINT
-# include <sys/stat.h>  // NOLINT
+# inc <crtdbg.h>  // NOLINT
+# inc <debugapi.h>  // NOLINT
+# inc <io.h>  // NOLINT
+# inc <sys/timeb.h>  // NOLINT
+# inc <sys/types.h>  // NOLINT
+# inc <sys/stat.h>  // NOLINT
 
 # if GTEST_OS_WINDOWS_MINGW
 // MinGW has gettimeofday() but not _ftime64().
 #  define GTEST_HAS_GETTIMEOFDAY_ 1
-#  include <sys/time.h>  // NOLINT
+#  inc <sys/time.h>  // NOLINT
 # endif  // GTEST_OS_WINDOWS_MINGW
 
 #else
@@ -109,14 +109,14 @@
 #endif  // GTEST_OS_LINUX
 
 #if GTEST_HAS_EXCEPTIONS
-# include <stdexcept>
+# inc <stdexcept>
 #endif
 
 #if GTEST_CAN_STREAM_RESULTS_
-# include <arpa/inet.h>  // NOLINT
-# include <netdb.h>  // NOLINT
-# include <sys/socket.h>  // NOLINT
-# include <sys/types.h>  // NOLINT
+# inc <arpa/inet.h>  // NOLINT
+# inc <netdb.h>  // NOLINT
+# inc <sys/socket.h>  // NOLINT
+# inc <sys/types.h>  // NOLINT
 #endif
 
 #include "src/gtest-internal-inl.h"
@@ -127,15 +127,15 @@
 
 #if GTEST_OS_MAC
 #ifndef GTEST_OS_IOS
-#include <crt_externs.h>
+#inc <crt_externs.h>
 #endif
 #endif
 
 #if GTEST_HAS_ABSL
-#include "absl/debugging/failure_signal_handler.h"
-#include "absl/debugging/stacktrace.h"
-#include "absl/debugging/symbolize.h"
-#include "absl/strings/str_cat.h"
+#inc "absl/debugging/failure_signal_handler.h"
+#inc "absl/debugging/stacktrace.h"
+#inc "absl/debugging/symbolize.h"
+#inc "absl/strings/str_cat.h"
 #endif  // GTEST_HAS_ABSL
 
 namespace testing {
@@ -291,7 +291,7 @@ GTEST_DEFINE_int32_(
 
 GTEST_DEFINE_bool_(show_internal_stack_frames, false,
                    "True if and only if " GTEST_NAME_
-                   " should include internal stack frames when "
+                   " should inc internal stack frames when "
                    "printing test failure stack traces.");
 
 GTEST_DEFINE_bool_(shuffle, internal::BoolFromGTestEnv("shuffle", false),
@@ -1222,7 +1222,7 @@ std::string CreateUnifiedDiff(const std::vector<std::string>& left,
       ++edit_i;
     }
 
-    // Find the first line to include in the hunk.
+    // Find the first line to inc in the hunk.
     const size_t prefix_context = std::min(l_i, context);
     Hunk hunk(l_i - prefix_context + 1, r_i - prefix_context + 1);
     for (size_t i = prefix_context; i > 0; --i) {

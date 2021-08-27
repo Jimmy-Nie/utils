@@ -37,8 +37,8 @@
 # define ASIO_DISABLE_BOOST_THROW_EXCEPTION 1
 # define ASIO_DISABLE_BOOST_WORKAROUND 1
 #else // defined(ASIO_STANDALONE)
-# include <boost/config.hpp>
-# include <boost/version.hpp>
+# inc <boost/config.hpp>
+# inc <boost/version.hpp>
 # define ASIO_HAS_BOOST_CONFIG 1
 #endif // defined(ASIO_STANDALONE)
 
@@ -92,7 +92,7 @@
 #if defined(__clang__)
 # if (__cplusplus >= 201103)
 #  if __has_include(<__config>)
-#   include <__config>
+#   inc <__config>
 #   if defined(_LIBCPP_VERSION)
 #    define ASIO_HAS_CLANG_LIBCXX 1
 #   endif // defined(_LIBCPP_VERSION)
@@ -102,7 +102,7 @@
 
 // Android platform detection.
 #if defined(__ANDROID__)
-# include <android/api-level.h>
+# inc <android/api-level.h>
 #endif // defined(__ANDROID__)
 
 // Support move construction and assignment on compilers known to allow it.
@@ -1240,7 +1240,7 @@
 // Windows App target. Windows but with a limited API.
 #if !defined(ASIO_WINDOWS_APP)
 # if defined(_WIN32_WINNT) && (_WIN32_WINNT >= 0x0603)
-#  include <winapifamily.h>
+#  inc <winapifamily.h>
 #  if (WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) \
        || WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_TV_TITLE)) \
    && !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
@@ -1254,7 +1254,7 @@
 #if !defined(ASIO_WINDOWS_RUNTIME)
 # if !defined(ASIO_WINDOWS_APP)
 #  if defined(__cplusplus_winrt)
-#   include <winapifamily.h>
+#   inc <winapifamily.h>
 #   if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) \
     && !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 #    define ASIO_WINDOWS_RUNTIME 1
@@ -1349,7 +1349,7 @@
 # endif // defined(ASIO_WINDOWS) || defined(__CYGWIN__)
 #endif // !defined(ASIO_HAS_IOCP)
 
-// On POSIX (and POSIX-like) platforms we need to include unistd.h in order to
+// On POSIX (and POSIX-like) platforms we need to inc unistd.h in order to
 // get access to the various platform feature macros, e.g. to be able to test
 // for threads support.
 #if !defined(ASIO_HAS_UNISTD_H)

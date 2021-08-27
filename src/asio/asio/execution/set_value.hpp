@@ -41,7 +41,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>set_value(R, Vs...)</tt>, if that expression is valid,
  *   with overload resolution performed in a context that includes the
- *   declaration <tt>void set_value();</tt> and that does not include a
+ *   declaration <tt>void set_value();</tt> and that does not inc a
  *   declaration of <tt>execution::set_value</tt>. If the function selected by
  *   overload resolution does not send the value(s) <tt>Vs...</tt> to the
  *   receiver <tt>R</tt>'s value channel, the program is ill-formed with no

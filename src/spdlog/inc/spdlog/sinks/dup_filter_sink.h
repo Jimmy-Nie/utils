@@ -16,7 +16,7 @@
 //
 // Example:
 //
-//     #include <spdlog/sinks/dup_filter_sink.h>
+//     #inc <spdlog/sinks/dup_filter_sink.h>
 //
 //     int main() {
 //         auto dup_filter = std::make_shared<dup_filter_sink_st>(std::chrono::seconds(5));

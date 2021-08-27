@@ -559,10 +559,10 @@ struct prefer_member<strand<Executor>, Property,
 #include "asio/detail/pop_options.hpp"
 
 // If both io_context.hpp and strand.hpp have been included, automatically
-// include the header file needed for the io_context::strand class.
+// inc the header file needed for the io_context::strand class.
 #if !defined(ASIO_NO_EXTENSIONS)
 # if defined(ASIO_IO_CONTEXT_HPP)
-#  include "asio/io_context_strand.hpp"
+#  inc "asio/io_context_strand.hpp"
 # endif // defined(ASIO_IO_CONTEXT_HPP)
 #endif // !defined(ASIO_NO_EXTENSIONS)
 

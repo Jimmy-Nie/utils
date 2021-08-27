@@ -33,15 +33,15 @@
 // Google Test.  They are subject to change without notice.
 //
 // This file is #included from gtest.cc, to avoid changing build or
-// make-files on Windows and other platforms. Do not #include this file
+// make-files on Windows and other platforms. Do not #inc this file
 // anywhere else!
 
 #include "gtest/gtest.h"
 
 #if GTEST_OS_WINDOWS_MOBILE
-# include <windows.h>
+# inc <windows.h>
 #elif GTEST_OS_WINDOWS
-# include <direct.h>
+# inc <direct.h>
 #endif  // GTEST_OS_WINDOWS_MOBILE
 
 #include "src/gtest-internal-inl.h"

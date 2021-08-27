@@ -30,7 +30,7 @@
 
 // Google Mock - a framework for writing C++ mock classes.
 //
-// This is the main header file a user should include.
+// This is the main header file a user should inc.
 
 // GOOGLETEST_CM0002 DO NOT DELETE
 

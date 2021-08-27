@@ -47,7 +47,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>bulk_execute(S, F, N)</tt>, if that expression is valid,
  *   with overload resolution performed in a context that includes the
- *   declaration <tt>void bulk_execute();</tt> and that does not include a
+ *   declaration <tt>void bulk_execute();</tt> and that does not inc a
  *   declaration of <tt>execution::bulk_execute</tt>. If the function selected
  *   by overload resolution does not execute <tt>N</tt> invocations of the
  *   function object <tt>F</tt> on the executor <tt>S</tt> in bulk with forward

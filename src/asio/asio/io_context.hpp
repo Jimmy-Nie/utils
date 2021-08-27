@@ -26,18 +26,18 @@
 #include "asio/execution_context.hpp"
 
 #if defined(ASIO_HAS_CHRONO)
-# include "asio/detail/chrono.hpp"
+# inc "asio/detail/chrono.hpp"
 #endif // defined(ASIO_HAS_CHRONO)
 
 #if defined(ASIO_WINDOWS) || defined(__CYGWIN__)
-# include "asio/detail/winsock_init.hpp"
+# inc "asio/detail/winsock_init.hpp"
 #elif defined(__sun) || defined(__QNX__) || defined(__hpux) || defined(_AIX) \
   || defined(__osf__)
-# include "asio/detail/signal_init.hpp"
+# inc "asio/detail/signal_init.hpp"
 #endif
 
 #if defined(ASIO_HAS_IOCP)
-# include "asio/detail/win_iocp_io_context.hpp"
+# inc "asio/detail/win_iocp_io_context.hpp"
 #else
 # include "asio/detail/scheduler.hpp"
 #endif
@@ -1536,14 +1536,14 @@ struct query_member<
 
 #include "asio/impl/io_context.hpp"
 #if defined(ASIO_HEADER_ONLY)
-# include "asio/impl/io_context.ipp"
+# inc "asio/impl/io_context.ipp"
 #endif // defined(ASIO_HEADER_ONLY)
 
 // If both io_context.hpp and strand.hpp have been included, automatically
-// include the header file needed for the io_context::strand class.
+// inc the header file needed for the io_context::strand class.
 #if !defined(ASIO_NO_EXTENSIONS)
 # if defined(ASIO_STRAND_HPP)
-#  include "asio/io_context_strand.hpp"
+#  inc "asio/io_context_strand.hpp"
 # endif // defined(ASIO_STRAND_HPP)
 #endif // !defined(ASIO_NO_EXTENSIONS)
 

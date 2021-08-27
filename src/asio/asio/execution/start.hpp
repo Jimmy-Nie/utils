@@ -38,7 +38,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>start(R)</tt>, if that expression is valid, with
  * overload resolution performed in a context that includes the declaration
- * <tt>void start();</tt> and that does not include a declaration of
+ * <tt>void start();</tt> and that does not inc a declaration of
  * <tt>execution::start</tt>.
  *
  * @li Otherwise, <tt>execution::start(R)</tt> is ill-formed.

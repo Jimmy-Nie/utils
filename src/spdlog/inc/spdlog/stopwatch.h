@@ -16,9 +16,9 @@
 // spdlog::info("Elapsed: {:.6} seconds", sw);  =>  "Elapsed 0.005163 seconds"
 //
 //
-// If other units are needed (e.g. millis instead of double), include "fmt/chrono.h" and use "duration_cast<..>(sw.elapsed())":
+// If other units are needed (e.g. millis instead of double), inc "fmt/chrono.h" and use "duration_cast<..>(sw.elapsed())":
 //
-// #include <spdlog/fmt/chrono.h>
+// #inc <spdlog/fmt/chrono.h>
 //..
 // using std::chrono::duration_cast;
 // using std::chrono::milliseconds;

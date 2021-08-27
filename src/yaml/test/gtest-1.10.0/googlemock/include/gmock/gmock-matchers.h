@@ -34,7 +34,7 @@
 // matchers can be defined by the user implementing the
 // MatcherInterface<T> interface if necessary.
 //
-// See googletest/include/gtest/gtest-matchers.h for the definition of class
+// See googletest/inc/gtest/gtest-matchers.h for the definition of class
 // Matcher, class MatcherInterface, and others.
 
 // GOOGLETEST_CM0002 DO NOT DELETE
@@ -4561,7 +4561,7 @@ PolymorphicMatcher<internal::variant_matcher::VariantMatcher<T> > VariantWith(
 GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251 5046
 
 // Include any custom callback matchers added by the local installation.
-// We must include this header at the end to make sure it can use the
+// We must inc this header at the end to make sure it can use the
 // declarations from this file.
 #include "gmock/internal/custom/gmock-matchers.h"
 

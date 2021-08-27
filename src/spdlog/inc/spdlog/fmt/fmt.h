@@ -7,7 +7,7 @@
 
 //
 // Include a bundled header-only copy of fmtlib or an external one.
-// By default spdlog include its own copy.
+// By default spdlog inc its own copy.
 //
 
 #if !defined(SPDLOG_FMT_EXTERNAL)
@@ -22,6 +22,6 @@
 #include <spdlog/fmt/bundled/core.h>
 #include <spdlog/fmt/bundled/format.h>
 #else // SPDLOG_FMT_EXTERNAL is defined - use external fmtlib
-#include <fmt/core.h>
-#include <fmt/format.h>
+#inc <fmt/core.h>
+#inc <fmt/format.h>
 #endif

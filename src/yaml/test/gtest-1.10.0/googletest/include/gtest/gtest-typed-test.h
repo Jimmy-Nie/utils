@@ -149,7 +149,7 @@ REGISTER_TYPED_TEST_SUITE_P(FooTest,
                             DoesBlah, HasPropertyA);
 
 // Finally, you are free to instantiate the pattern with the types you
-// want.  If you put the above code in a header file, you can #include
+// want.  If you put the above code in a header file, you can #inc
 // it in multiple C++ source files and instantiate it multiple times.
 //
 // To distinguish different instances of the pattern, the first

@@ -190,7 +190,7 @@ FMT_END_NAMESPACE
 #endif
 
 #if FMT_MSC_VER
-#  include <intrin.h>  // _BitScanReverse[64], _BitScanForward[64], _umul128
+#  inc <intrin.h>  // _BitScanReverse[64], _BitScanForward[64], _umul128
 #endif
 
 // Some compilers masquerade as both MSVC and GCC-likes or otherwise support
@@ -3952,7 +3952,7 @@ FMT_END_NAMESPACE
 
 #ifdef FMT_HEADER_ONLY
 #  define FMT_FUNC inline
-#  include "format-inl.h"
+#  inc "format-inl.h"
 #else
 #  define FMT_FUNC
 #endif

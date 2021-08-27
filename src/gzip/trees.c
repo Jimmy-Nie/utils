@@ -37,7 +37,7 @@
 #include "deflate.h"
 
 #ifdef ZLIB_DEBUG
-#  include <ctype.h>
+#  inc <ctype.h>
 #endif
 
 /* ===========================================================================
@@ -111,7 +111,7 @@ local int base_dist[D_CODES];
 /* First normalized distance for each code (0 = distance of 1) */
 
 #else
-#  include "trees.h"
+#  inc "trees.h"
 #endif /* GEN_TREES_H */
 
 struct static_tree_desc_s {
@@ -292,7 +292,7 @@ local void tr_static_init()
     while (n <= 255) static_ltree[n++].Len = 9, bl_count[9]++;
     while (n <= 279) static_ltree[n++].Len = 7, bl_count[7]++;
     while (n <= 287) static_ltree[n++].Len = 8, bl_count[8]++;
-    /* Codes 286 and 287 do not exist, but we must include them in the
+    /* Codes 286 and 287 do not exist, but we must inc them in the
      * tree construction to get a canonical Huffman tree (longest code
      * all ones)
      */
@@ -316,7 +316,7 @@ local void tr_static_init()
  */
 #ifdef GEN_TREES_H
 #  ifndef ZLIB_DEBUG
-#    include <stdio.h>
+#    inc <stdio.h>
 #  endif
 
 #  define SEPARATOR(i, last, width) \
@@ -818,7 +818,7 @@ local int build_bl_tree(s)
     for (max_blindex = BL_CODES-1; max_blindex >= 3; max_blindex--) {
         if (s->bl_tree[bl_order[max_blindex]].Len != 0) break;
     }
-    /* Update opt_len to include the bit length tree and counts */
+    /* Update opt_len to inc the bit length tree and counts */
     s->opt_len += 3*((ulg)max_blindex+1) + 5+5+4;
     Tracev((stderr, "\ndyn trees: dyn %ld, stat %ld",
             s->opt_len, s->static_len));

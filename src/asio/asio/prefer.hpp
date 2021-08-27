@@ -52,7 +52,7 @@ namespace asio {
  *
  * @li Otherwise, <tt>require(E, P0)</tt> if <tt>N == 0</tt> and the expression
  *   <tt>require(E, P0)</tt> is a valid expression with overload resolution
- *   performed in a context that does not include the declaration of the
+ *   performed in a context that does not inc the declaration of the
  *   <tt>require</tt> customization point object.
  *
  * @li Otherwise, <tt>(E).prefer(P0)</tt> if <tt>N == 0</tt> and the expression
@@ -60,7 +60,7 @@ namespace asio {
  *
  * @li Otherwise, <tt>prefer(E, P0)</tt> if <tt>N == 0</tt> and the expression
  *   <tt>prefer(E, P0)</tt> is a valid expression with overload resolution
- *   performed in a context that does not include the declaration of the
+ *   performed in a context that does not inc the declaration of the
  *   <tt>prefer</tt> customization point object.
  *
  * @li Otherwise, <tt>E</tt> if <tt>N == 0</tt>.

@@ -49,7 +49,7 @@ namespace execution {
  * @li Otherwise, <tt>connect(s, r)</tt>, if that expression is valid, if its
  *   type satisfies <tt>operation_state</tt>, and if <tt>S</tt> satisfies
  *   <tt>sender</tt>, with overload resolution performed in a context that
- *   includes the declaration <tt>void connect();</tt> and that does not include
+ *   includes the declaration <tt>void connect();</tt> and that does not inc
  *   a declaration of <tt>execution::connect</tt>.
  *
  * @li Otherwise, <tt>as_operation{s, r}</tt>, if <tt>r</tt> is not an instance

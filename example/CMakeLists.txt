@@ -15,12 +15,16 @@ endif ()
 #-----------------------------------------------------------
 # Generate executable file
 #-----------------------------------------------------------
+ADD_DEFINITIONS(-DSPDLOG_COMPILED_LIB)  #for compile spdlog
+
 SET(SRC_DIR ${PROJECT_SOURCE_DIR}/../src)
 INCLUDE_DIRECTORIES(
-   ${SRC_DIR}
+        ${SRC_DIR}
+        ${SRC_DIR}/spdlog/inc
 )
 
 FILE(GLOB_RECURSE SHARE_SOURCE "${SRC_DIR}/signals/*.h*" "${SRC_DIR}/share/*.h*")
+FILE(GLOB_RECURSE SPDLOG_SOURCE "${SRC_DIR}/spdlog/inc/*.h*" "${SRC_DIR}/spdlog/src/*.c*")
 
 SET(BIN_NAME thread_pool)
 FILE(GLOB_RECURSE SRC_SOURCE "${SRC_DIR}/${BIN_NAME}/*.c*" "${SRC_DIR}/${BIN_NAME}/*.h*")
@@ -28,6 +32,10 @@ ADD_EXECUTABLE(${BIN_NAME} ${SRC_SOURCE} thread_pool/test.cpp)
 TARGET_LINK_LIBRARIES(${BIN_NAME}  PUBLIC -lpthread -ldl)
 
 SET(BIN_NAME thread)
-FILE(GLOB_RECURSE SRC_SOURCE "${SRC_DIR}/${BIN_NAME}/*.c*" "${SRC_DIR}/${BIN_NAME}/*.h*" "${SHARE_SOURCE}")
-ADD_EXECUTABLE(${BIN_NAME} ${SRC_SOURCE} thread/test.cpp)
+FILE(GLOB_RECURSE SRC_SOURCE "${SRC_DIR}/${BIN_NAME}/*.c*" "${SRC_DIR}/${BIN_NAME}/*.h*")
+ADD_EXECUTABLE(${BIN_NAME} ${SRC_SOURCE} ${SHARE_SOURCE} thread/test.cpp)
+TARGET_LINK_LIBRARIES(${BIN_NAME}  PUBLIC -lpthread -ldl)
+
+SET(BIN_NAME spdlog)
+ADD_EXECUTABLE(${BIN_NAME} ${SPDLOG_SOURCE} log/test.cpp)
 TARGET_LINK_LIBRARIES(${BIN_NAME}  PUBLIC -lpthread -ldl)

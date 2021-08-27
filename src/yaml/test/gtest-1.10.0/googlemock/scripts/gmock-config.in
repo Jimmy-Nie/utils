@@ -219,7 +219,7 @@ if test "${this_bindir}" = "${this_bindir%${bindir}}"; then
   gmock_libs="${build_dir}/lib/libgmock.la"
   gmock_ldflags=""
 
-  # We provide hooks to include from either the source or build dir, where the
+  # We provide hooks to inc from either the source or build dir, where the
   # build dir is always preferred. This will potentially allow us to write
   # build rules for generated headers and have them automatically be preferred
   # over provided versions.

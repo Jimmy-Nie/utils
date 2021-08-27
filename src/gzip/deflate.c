@@ -56,7 +56,7 @@ const char deflate_copyright[] =
 /*
   If you use the zlib library in a product, an acknowledgment is welcome
   in the documentation of your product. If for some reason you cannot
-  include such an acknowledgment, I would appreciate that you keep this
+  inc such an acknowledgment, I would appreciate that you keep this
   copyright string in the executable of your product.
  */
 

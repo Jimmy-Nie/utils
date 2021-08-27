@@ -2093,7 +2093,7 @@ thread_return_type WINAPI MQTTAsync_receiveThread(void* n)
 							/* Call the failure callback if there is one subscribe in the MQTT packet and
 							 * the return code is 0x80 (failure).  If the MQTT packet contains >1 subscription
 							 * request, then we call onSuccess with the list of returned QoSs, which inelegantly,
-							 * could include some failures, or worse, the whole list could have failed.
+							 * could inc some failures, or worse, the whole list could have failed.
 							 */
 							if (m->c->MQTTVersion >= MQTTVERSION_5)
 							{

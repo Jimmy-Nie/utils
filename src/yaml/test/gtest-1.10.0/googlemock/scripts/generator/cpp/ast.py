@@ -817,11 +817,11 @@ class AstBuilder(object):
             # TODO(nnorwitz): handle more preprocessor directives.
             # token starts with a #, so remove it and strip whitespace.
             name = token.name[1:].lstrip()
-            if name.startswith('include'):
-                # Remove "include".
+            if name.startswith('inc'):
+                # Remove "inc".
                 name = name[7:].strip()
                 assert name
-                # Handle #include \<newline> "header-on-second-line.h".
+                # Handle #inc \<newline> "header-on-second-line.h".
                 if name.startswith('\\'):
                     name = name[1:].strip()
                 assert name[0] in '<"', token

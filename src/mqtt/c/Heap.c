@@ -443,7 +443,7 @@ heap_info* Heap_get_info(void)
 int HeapDumpString(FILE* file, char* str)
 {
 	int rc = 0;
-	size_t len = str ? strlen(str) + 1 : 0; /* include the trailing null */
+	size_t len = str ? strlen(str) + 1 : 0; /* inc the trailing null */
 
 	if (fwrite(&(str), sizeof(char*), 1, file) != 1)
 		rc = -1;

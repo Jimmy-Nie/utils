@@ -49,7 +49,7 @@ namespace execution {
  * @li Otherwise, <tt>submit(s, r)</tt>, if that expression is valid and
  *   <tt>S</tt> models <tt>sender</tt>, with overload resolution performed in a
  *   context that includes the declaration <tt>void submit();</tt> and that does
- *   not include a declaration of <tt>execution::submit</tt>. If the function
+ *   not inc a declaration of <tt>execution::submit</tt>. If the function
  *   selected by overload resolution does not submit the receiver object
  *   <tt>r</tt> via the sender <tt>s</tt>, the program is ill-formed with no
  *   diagnostic required.

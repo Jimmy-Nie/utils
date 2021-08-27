@@ -46,7 +46,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>execute(e, f)</tt>, if that expression is valid, with
  *   overload resolution performed in a context that includes the declaration
- *   <tt>void execute();</tt> and that does not include a declaration of
+ *   <tt>void execute();</tt> and that does not inc a declaration of
  *   <tt>execution::execute</tt>. If the function selected by overload
  *   resolution does not execute the function object <tt>f</tt> on the executor
  *   <tt>e</tt>, the program is ill-formed with no diagnostic required.

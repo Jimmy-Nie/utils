@@ -39,7 +39,7 @@ namespace execution {
  *
  * @li Otherwise, <tt>set_error(R, E)</tt>, if that expression is valid, with
  *   overload resolution performed in a context that includes the declaration
- *   <tt>void set_error();</tt> and that does not include a declaration of
+ *   <tt>void set_error();</tt> and that does not inc a declaration of
  *   <tt>execution::set_error</tt>. If the function selected by overload
  *   resolution does not send the error <tt>E</tt> to the receiver <tt>R</tt>'s
  *   error channel, the program is ill-formed with no diagnostic required.

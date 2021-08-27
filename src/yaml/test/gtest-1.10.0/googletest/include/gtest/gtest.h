@@ -370,7 +370,7 @@ GTEST_API_ AssertionResult AssertionFailure(const Message& msg);
 }  // namespace testing
 
 // Includes the auto-generated header that implements a family of generic
-// predicate assertion macros. This include comes late because it relies on
+// predicate assertion macros. This inc comes late because it relies on
 // APIs declared above.
 #include "gtest/gtest_pred_impl.h"
 
@@ -2254,7 +2254,7 @@ class GTEST_API_ ScopedTrace {
 //
 // The message argument can be anything streamable to std::ostream.
 //
-// In the implementation, we include the current line number as part
+// In the implementation, we inc the current line number as part
 // of the dummy variable name, thus allowing multiple SCOPED_TRACE()s
 // to appear in the same block - as long as they are on different
 // lines.

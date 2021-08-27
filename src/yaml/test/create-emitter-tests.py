@@ -181,7 +181,7 @@ def create_emitter_tests(out):
         'gtest/gtest.h',
     ]
     for include in includes:
-        out.writeln('#include "%s"' % include)
+        out.writeln('#inc "%s"' % include)
     out.writeln('')
 
     usings = [

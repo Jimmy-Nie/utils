@@ -56,7 +56,7 @@ import time
 SCRIPT_DIR = os.path.dirname(sys.argv[0])
 
 # Where to store the generated header.
-HEADER = os.path.join(SCRIPT_DIR, '../include/gtest/gtest_pred_impl.h')
+HEADER = os.path.join(SCRIPT_DIR, '../inc/gtest/gtest_pred_impl.h')
 
 # Where to store the generated unit test.
 UNIT_TEST = os.path.join(SCRIPT_DIR, '../test/gtest_pred_impl_unittest.cc')
@@ -115,7 +115,7 @@ def HeaderPreamble(n):
 #ifndef GTEST_INCLUDE_GTEST_GTEST_PRED_IMPL_H_
 #define GTEST_INCLUDE_GTEST_GTEST_PRED_IMPL_H_
 
-#include "gtest/gtest.h"
+#inc "gtest/gtest.h"
 
 namespace testing {
 
@@ -382,10 +382,10 @@ def UnitTestPreamble():
 // time to finish, we should consider separating this file into a
 // stand-alone regression test.
 
-#include <iostream>
+#inc <iostream>
 
-#include "gtest/gtest.h"
-#include "gtest/gtest-spi.h"
+#inc "gtest/gtest.h"
+#inc "gtest/gtest-spi.h"
 
 // A user-defined data type.
 struct Bool {
