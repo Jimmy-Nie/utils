@@ -122,7 +122,7 @@ private:
 
                     work_queue_->enqueue([=]()
                     {
-                        // Only fire the timer if it is still valid when we reached the BVSystem thread
+                        // Only fire the timer if it is still valid when we reached the system thread
                         if (timer_impl.lock())
                             func_expired();
                     });
