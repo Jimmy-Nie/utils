@@ -1,6 +1,6 @@
 #include "timer/timer.h"
 #include "spdlog_impl.h"
-#include <iostream>
+#include "timer/datetime.h"
 
 using namespace jm;
 
@@ -34,12 +34,23 @@ void test_timer() {
     tm.stop();
 }
 
+void test_datetime() {
+    auto tm = DateTime::get_current_local_time();
+    test_logi("current local time: {}", tm.to_string());
+    test_logi("The timezone:{}", tm.get_timezone());
+
+    tm = DateTime::get_current_utc_time();
+    test_logi("current utc time: {}", tm.to_string());
+    test_logi("The timezone:{}", tm.get_timezone());
+}
+
 int main() {
     JMLog::init("test");
 
-    test_simple_time();
+    //test_simple_time();
 
-    test_timer();
+    //test_timer();
 
+    test_datetime();
     return 0;
 }

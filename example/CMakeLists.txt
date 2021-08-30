@@ -23,7 +23,7 @@ INCLUDE_DIRECTORIES(
         ${SRC_DIR}/spdlog/inc
 )
 
-FILE(GLOB_RECURSE SHARE_SOURCE "${SRC_DIR}/signals/*.h*" "${SRC_DIR}/share/*.h*")
+FILE(GLOB_RECURSE SHARE_SOURCE "${SRC_DIR}/signals/*.h*" "${SRC_DIR}/share/*.h*" "${SRC_DIR}/share/*.c*")
 FILE(GLOB_RECURSE SPDLOG_SOURCE "${SRC_DIR}/spdlog/inc/*.h*" "${SRC_DIR}/spdlog/src/*.c*")
 
 SET(BIN_NAME thread_pool)
