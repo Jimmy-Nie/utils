@@ -15,6 +15,9 @@ void test_system() {
 
     std::string cmd = "cat /proc/cpuinfo";
     test_logi("system call: \n{}", System::system_call(cmd));
+
+    System::system_call_async(cmd, std::bind([](bool result){test_logi("System call result: {}", result);}, std::placeholders::_1));
+    System::sleep(10);
 }
 
 int main() {
