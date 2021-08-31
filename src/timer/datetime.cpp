@@ -823,8 +823,8 @@ std::string DateTime::to_short_datetime_string() const
 {
     throw_if_null();
     // 2008-04-01
-    return fmt::format("{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}", get_year(), get_month(), get_day(), get_hour(),
-                       get_minutes(), get_seconds());
+    return fmt::format("{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d} {:02d}00",
+            get_year(), get_month(), get_day(), get_hour(), get_minutes(), get_seconds(), get_timezone());
 }
 
 std::string DateTime::to_long_time_string() const

@@ -35,21 +35,28 @@ void test_timer() {
 }
 
 void test_datetime() {
-    auto tm = DateTime::get_current_local_time();
-    test_logi("current local time: {}", tm.to_string());
-    test_logi("The timezone:{}", tm.get_timezone());
-
-    tm = DateTime::get_current_utc_time();
+    ///1. get utc time
+    auto tm = DateTime::get_current_utc_time();
     test_logi("current utc time: {}", tm.to_string());
     test_logi("The timezone:{}", tm.get_timezone());
+
+    ///2. get local time
+    tm = DateTime::get_current_local_time();
+    test_logi("current local time: {}", tm.to_string());
+    test_logi("The timezone:{}", tm.get_timezone());
+    test_logi("The date time:{}", tm.to_short_datetime_string());
+
+    ///3. get year month day hour min second
+    test_logi("The time: {:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}",
+            tm.get_year(), tm.get_month(), tm.get_day(), tm.get_hour(), tm.get_minutes(), tm.get_seconds());
 }
 
 int main() {
     JMLog::init("test");
 
-    //test_simple_time();
+    test_simple_time();
 
-    //test_timer();
+    test_timer();
 
     test_datetime();
     return 0;
