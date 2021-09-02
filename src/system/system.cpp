@@ -145,7 +145,7 @@ uint64_t System::get_microseconds()
 uint64_t System::get_system_running_duration() {
     /// steady_clock can get cpu running to now duration, accuracy to 1 ns
     ///can use std::chrono::steady_clock::period::num/std::chrono::steady_clock::period::den
-    return(static_cast<uint64_t>(std::chrono::steady_clock::now().time_since_epoch().count()/1e6);
+    return(static_cast<uint64_t>(std::chrono::steady_clock::now().time_since_epoch().count()/1e6));
 }
 
 std::string System::get_exe_path()

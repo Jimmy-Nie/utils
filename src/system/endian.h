@@ -1,18 +1,17 @@
-
 #pragma once
 
 #include <cstdint>
 
 namespace jm
 {
-    
+
 /// \addtogroup bvcore_I_O_Data bvcore I/O Data
 /// \{
 
 /// \brief Endianess management class.
 class Endian
 {
-public:
+private:
     /// \brief Swaps larger amounts of data between little and big endian.
     ///
     /// \param data Data to be swapped.
@@ -31,14 +30,22 @@ public:
         }
     }
 
-    static void swap_if_big(void *data, int type_size, int total_times = 1) { if (is_system_big()) swap(data, type_size, total_times); }
-    static void swap_if_little(void *data, int type_size, int total_times = 1) { if (!is_system_big()) swap(data, type_size, total_times); }
+public:
+    /// \brief: swap the data to little/big endian
+    static void swap_to_little_endian(void *data, int type_size, int total_times = 1) {
+        if (is_system_big())
+            swap(data, type_size, total_times);
+    }
+    static void swap_to_big_endian(void *data, int type_size, int total_times = 1) {
+        if (!is_system_big())
+            swap(data, type_size, total_times);
+    }
 
     /// \brief Returns true if big endian system.
     /** \return true if big endian system, false otherwise.*/
     static bool is_system_big() {
         const int i = 1;
-        return !(*(char*)i);
+        return !(*(char*)&i);
     }
 
     /// \brief Returns true if 64 bit system.
