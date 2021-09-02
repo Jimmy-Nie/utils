@@ -17,6 +17,9 @@ public:
     /// \brief Get the current time microseconds.
     static uint64_t get_microseconds();
 
+    /// \brief Get the duration from system start, in milliseconds
+    static uint64_t get_system_running_duration();
+
     /// \brief Return the number of CPU cores
     static int get_num_cores();
 
