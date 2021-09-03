@@ -21,7 +21,6 @@ public:
 
     /// \brief Returns a pointer to the data.
     char *get_data();
-
     const char *get_data() const;
 
     template<typename Type>
