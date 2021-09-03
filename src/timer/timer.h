@@ -79,11 +79,11 @@ public:
     }
 
     ///\brief: sleep for period duration
-    void sleep_s(uint32_t secs) {
+    static void sleep_s(uint32_t secs) {
         std::this_thread::sleep_for(std::chrono::seconds(secs));
     }
 
-    void sleep_ms(uint32_t msecs) {
+    static void sleep_ms(uint32_t msecs) {
         std::this_thread::sleep_for(std::chrono::milliseconds(msecs));
     }
 

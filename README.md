@@ -19,8 +19,10 @@
 
 ###1. 系统类
 #### 1) Timer
-> - 
-> - 
+> - 包括SimpleTimer 和 Timer
+> - SimpleTimer: 简单的计算时间间隔，sleep一段时间
+> - Timer：监控线程，到达指定的时间点/段后，触发定义的动作
+> - DateTimer: 获取日历时间等
 
 #### 2) thread
 > - 线程：所有线程均继承它，可以很好的实现：同时开启，同时关闭（信号触发的形式）
@@ -33,13 +35,18 @@
 #### 4) memory_pool
 > - 内存池：避免频繁的new/delete导致性能降低和内存碎片化
 > - 具体说明: memory_pool/ReadMe
->
 
 #### 5) pubsub
 > - 发布/订阅机制：
 > - 不足：发布&订阅为同步，即订阅时将函数注册到一个类中，发布时调用所有注册的函数；
 >       这样导致，如果注册的函数中有一个是阻塞的，会影响整体的流程，导致卡死
 > - 解决：发布时调用函数，可将该函数压入线程池
+
+#### 6) System类
+> - endian: 大小端相关：判断，转换等
+> - system：获取CPU运行时间，系统休眠等
+> - signal，信号槽，用于多个线程间的信号传递
+
 
 ###2. 数据格式类
 #### 1) json
@@ -49,7 +56,19 @@
 #### 1) spdlog
 > - log打印：详细介绍见 spdlog/README
 > - github地址：https://github.com/gabime/spdlog
-#### 2) Databuf
+#### 2) directory
+> - path: 用于设置/获取/建立一个路径（可包含文件）
+> - directory: 单纯用于操作目录
+#### 3) iodata
+> - 
+> - 
+
+#### 4) optional
+> - C++17已经载入到了标准库中，无需使用该文件
+> - 作用：用于返回/传递/使用某种类型的对象，类似于指针的形式
+> - 增加了一个 bool has_value(),用于判断是否有值，使用 value获取值
+> - github: https://github.com/martinmoene/optional-lite
+
 #### 3) enum
 #### 4) yaml
 
