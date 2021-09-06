@@ -1,5 +1,6 @@
 #include "text/string_help.h"
 #include "iodata/databuffer.h"
+#include "iodata/memory_device.h"
 #include "spdlog_impl.h"
 #include <iostream>
 using namespace jm;

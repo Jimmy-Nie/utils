@@ -68,8 +68,8 @@
 > - 增加了一个 bool has_value(),用于判断是否有值，使用 value获取值
 > - github: https://github.com/martinmoene/optional-lite
 
-#### 3) enum
-#### 4) yaml
+#### 5) enum
+#### 6) yaml
 
 ###4. 通信类：，，
 #### 1) http

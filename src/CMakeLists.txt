@@ -58,6 +58,7 @@ ADD_LIBRARY(Timer       ${TIMER_SRC})
 
 TARGET_LINK_LIBRARIES(Exception -ldl)
 TARGET_LINK_LIBRARIES(Timer Exception)
-TARGET_LINK_LIBRARIES(Text Exception)
+TARGET_LINK_LIBRARIES(Text Exception -lpthread)
 TARGET_LINK_LIBRARIES(Dir Exception Text -lpthread)
 TARGET_LINK_LIBRARIES(System Exception -lpthread)
+TARGET_LINK_LIBRARIES(IOdata Exception -lpthread)
