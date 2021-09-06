@@ -1,6 +1,6 @@
 #pragma once
 
-#include "signals/signals.h"
+#include "thread/signals.h"
 
 #include <functional>
 #include <map>

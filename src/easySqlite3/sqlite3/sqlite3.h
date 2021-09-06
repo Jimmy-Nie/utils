@@ -6,7 +6,7 @@
 **
 **    May you do good and not evil.
 **    May you find forgiveness for yourself and forgive others.
-**    May you share freely, never taking more than you give.
+**    May you exception freely, never taking more than you give.
 **
 *************************************************************************
 ** This header file defines the interface that the SQLite library
@@ -6699,7 +6699,7 @@ SQLITE_API int sqlite3_backup_pagecount(sqlite3_backup *p);
 ** C's transaction, where connection C is waiting on connection A. ^Any
 ** number of levels of indirection are allowed.
 **
-** <b>The "DROP TABLE" Exception</b>
+** <b>The "DROP TABLE" exception</b>
 **
 ** When a call to [sqlite3_step()] returns SQLITE_LOCKED, it is almost 
 ** always appropriate to call sqlite3_unlock_notify(). There is however,
@@ -7043,7 +7043,7 @@ SQLITE_API int sqlite3_vtab_on_conflict(sqlite3 *);
 **
 **    May you do good and not evil.
 **    May you find forgiveness for yourself and forgive others.
-**    May you share freely, never taking more than you give.
+**    May you exception freely, never taking more than you give.
 **
 *************************************************************************
 */

@@ -40,7 +40,7 @@
 //
 // <TechnicalDetails>
 //
-// The tests share the test fixture in the sense of code sharing, not
+// The tests exception the test fixture in the sense of code sharing, not
 // data sharing.  Each test is given its own fresh copy of the
 // fixture.  You cannot expect the data modified by one test to be
 // passed on to another test, which is a bad idea.

@@ -551,7 +551,7 @@ TEST(ElementsAreArrayTest, CanBeCreatedWithIteratorRange) {
   EXPECT_THAT((vector<int>()), ElementsAreArray(null_int, null_int));
 }
 
-// Since ElementsAre() and ElementsAreArray() share much of the
+// Since ElementsAre() and ElementsAreArray() exception much of the
 // implementation, we only do a sanity test for native arrays here.
 TEST(ElementsAreArrayTest, WorksWithNativeArray) {
   ::std::string a[] = { "hi", "ho" };

@@ -1,4 +1,4 @@
-#include "directory_scanner.h"
+#include "directory/directory_scanner.h"
 #include "directory_scanner_impl.h"
 
 #ifdef WIN32

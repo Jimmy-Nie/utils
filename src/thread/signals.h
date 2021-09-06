@@ -3,10 +3,20 @@
 #include <functional>
 #include <memory>
 #include <vector>
-#include "share/bind_member.h"
 
 namespace jm
 {
+
+//---------------------------------------------------------------------
+// bind_member
+//---------------------------------------------------------------------
+template<class Return, class Type, class... Args>
+std::function<Return(Args...)> bind_member(Type *instance, Return(Type::*method)(Args...))
+{
+    return [=](Args &&... args) -> Return {
+        return (instance->*method)(std::forward<Args>(args)...);
+    };
+}
 
 //---------------------------------------------------------------------
 // Signal

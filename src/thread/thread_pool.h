@@ -95,7 +95,7 @@ inline void ThreadPool::stop() {
         stopped = true;
     }
     condition.notify_all();
-/*    for (std::thread_pool &worker: workers)
+/*    for (std::ThreadPool &worker: workers)
         worker.join();*/
 }
 

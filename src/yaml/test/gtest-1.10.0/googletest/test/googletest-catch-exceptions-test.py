@@ -112,7 +112,7 @@ class CatchCxxExceptionsTest(gtest_test_utils.TestCase):
 
      Tests in this test case verify that:
      * C++ exceptions are caught and logged as C++ (not SEH) exceptions
-     * Exception thrown affect the remainder of the test work flow in the
+     * exception thrown affect the remainder of the test work flow in the
        expected manner.
   """
 

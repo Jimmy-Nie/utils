@@ -2,7 +2,7 @@
 #include <map>
 #include <thread>
 #include <algorithm>
-#include "thread_pool/ThreadPool.h"
+#include "thread/thread_pool.h"
 
 namespace jm
 {

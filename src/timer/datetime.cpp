@@ -1,6 +1,6 @@
 #include "datetime.h"
 #include "spdlog/fmt/fmt.h"
-#include "share/exception.h"
+#include "exception/exception.h"
 
 #ifndef WIN32
 #include <cstring>

@@ -3,6 +3,7 @@
 #include <vector>
 #include <stdexcept>
 #include <string>
+
 namespace jm
 {
 /// \brief Top-level exception class.

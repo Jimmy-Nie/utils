@@ -783,7 +783,7 @@ DeathTest::TestRole WindowsDeathTest::AssumeRole() {
   // Flush the log buffers since the log streams are shared with the child.
   FlushInfoLog();
 
-  // The child process will share the standard handles with the parent.
+  // The child process will exception the standard handles with the parent.
   STARTUPINFOA startup_info;
   memset(&startup_info, 0, sizeof(STARTUPINFO));
   startup_info.dwFlags = STARTF_USESTDHANDLES;

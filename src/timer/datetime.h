@@ -4,8 +4,6 @@
 #include <string>
 
 namespace jm {
-/// \addtogroup bv_System bv System
-/// \{
 
 /// \brief Date/Time class.
 class DateTime {
@@ -139,5 +137,4 @@ private:
     static const int64_t ticks_from_1601_to_1900;
 };
 
-/// \}
 } // namespace clan

@@ -141,7 +141,7 @@ co_spawn(const Executor& ex, awaitable<T, AwaitableExecutor> a,
  *   }
  *   catch (const std::exception& e)
  *   {
- *     std::cerr << "Exception: " << e.what() << "\n";
+ *     std::cerr << "exception: " << e.what() << "\n";
  *   }
  * }
  *
@@ -264,7 +264,7 @@ co_spawn(ExecutionContext& ctx, awaitable<T, AwaitableExecutor> a,
  *   }
  *   catch (const std::exception& e)
  *   {
- *     std::cerr << "Exception: " << e.what() << "\n";
+ *     std::cerr << "exception: " << e.what() << "\n";
  *   }
  * }
  *
@@ -357,7 +357,7 @@ co_spawn(ExecutionContext& ctx, awaitable<void, AwaitableExecutor> a,
  *     }
  *     catch (const std::exception& e)
  *     {
- *       std::cerr << "Exception: " << e.what() << "\n";
+ *       std::cerr << "exception: " << e.what() << "\n";
  *     }
  *   }, asio::detached);
  * @endcode
@@ -440,7 +440,7 @@ co_spawn(const Executor& ex, F&& f,
  *     }
  *     catch (const std::exception& e)
  *     {
- *       std::cerr << "Exception: " << e.what() << "\n";
+ *       std::cerr << "exception: " << e.what() << "\n";
  *     }
  *   }, asio::detached);
  * @endcode

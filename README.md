@@ -3,7 +3,6 @@
  * Date:
  * Autor:
  * Modify:
-
 ==============================================================
 
 #Utils: 
@@ -18,11 +17,12 @@
 如果你准备使用交叉编译工具链，请按照platform的sample.cmake形式，将工具链地址写入到该cmake中
 
 ###1. 系统类
-#### 1) Timer
+#### 1) timer
 > - 包括SimpleTimer 和 Timer
 > - SimpleTimer: 简单的计算时间间隔，sleep一段时间
 > - Timer：监控线程，到达指定的时间点/段后，触发定义的动作
 > - DateTimer: 获取日历时间等
+> - **依赖：**spdlog, thread_pool, exception
 
 #### 2) thread
 > - 线程：所有线程均继承它，可以很好的实现：同时开启，同时关闭（信号触发的形式）
@@ -60,7 +60,6 @@
 > - path: 用于设置/获取/建立一个路径（可包含文件）
 > - directory: 单纯用于操作目录
 #### 3) iodata
-> - 
 > - 
 
 #### 4) optional

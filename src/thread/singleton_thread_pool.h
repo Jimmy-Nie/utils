@@ -7,7 +7,7 @@
  **********************************************************************/
 #pragma once
 
-#include "ThreadPool.h"
+#include "thread_pool.h"
 
 namespace jm {
 

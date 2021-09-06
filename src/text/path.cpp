@@ -1,5 +1,5 @@
 #include "path.h"
-#include "share/exception.h"
+#include "exception/exception.h"
 
 #ifdef WIN32
 #include <direct.h>

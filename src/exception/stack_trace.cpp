@@ -1,5 +1,5 @@
 
-#include "share/stack_trace.h"
+#include "stack_trace.h"
 #include "spdlog/fmt/fmt.h"
 
 #ifndef WIN32

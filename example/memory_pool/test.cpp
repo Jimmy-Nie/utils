@@ -133,7 +133,7 @@ int main()
   std::cout << "The vector implementation will probably be faster.\n\n";
   std::cout << "MemoryPool still has a lot of uses though. Any type of tree"
             " and when you have multiple linked lists are some examples (they"
-            " can all share the same memory pool).\n";
+            " can all exception the same memory pool).\n";
 
   return 0;
 }

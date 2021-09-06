@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "signals/signals.h"
-#include "share/ptr_extend.h"
+#include "signals.h"
+#include "ptr_extend.h"
 
 #include <iostream>
 #include <future>

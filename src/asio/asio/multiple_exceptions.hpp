@@ -24,7 +24,7 @@ namespace asio {
 #if defined(ASIO_HAS_STD_EXCEPTION_PTR) \
   || defined(GENERATING_DOCUMENTATION)
 
-/// Exception thrown when there are multiple pending exceptions to rethrow.
+/// exception thrown when there are multiple pending exceptions to rethrow.
 class multiple_exceptions
   : public std::exception
 {

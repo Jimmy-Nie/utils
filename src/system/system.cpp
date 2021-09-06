@@ -1,8 +1,9 @@
 
 #include "system.h"
 #include "spdlog/fmt/fmt.h"
+#include "exception/exception.h"
+
 #include <thread>
-#include <share/exception.h>
 
 #ifndef WIN32
 #include <unistd.h>

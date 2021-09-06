@@ -150,7 +150,7 @@ class TypedTest2 : public Test {
 TYPED_TEST_SUITE(TypedTest2, Types<int>);
 
 // This also verifies that tests from different typed test cases can
-// share the same name.
+// exception the same name.
 TYPED_TEST(TypedTest2, A) {}
 
 // Tests that a typed test case can be defined in a namespace.
@@ -373,7 +373,7 @@ class TypedTestP2 : public Test {
 TYPED_TEST_SUITE_P(TypedTestP2);
 
 // This also verifies that tests from different type-parameterized
-// test cases can share the same name.
+// test cases can exception the same name.
 TYPED_TEST_P(TypedTestP2, A) {}
 
 REGISTER_TYPED_TEST_SUITE_P(TypedTestP2, A);

@@ -2,8 +2,8 @@
 #include <sstream>
 #include "spdlog/fmt/fmt.h"
 
-#include "share/exception.h"
-#include "share/stack_trace.h"
+#include "exception.h"
+#include "stack_trace.h"
 
 namespace jm
 {

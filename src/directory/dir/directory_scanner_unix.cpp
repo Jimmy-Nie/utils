@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <cstring>
 #include "directory_scanner_unix.h"
-#include "share/exception.h"
+#include "exception/exception.h"
 
 namespace jm
 {

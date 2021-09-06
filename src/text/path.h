@@ -1,12 +1,9 @@
-
 #pragma once
 
 #include <vector>
 #include <string>
 
 namespace jm {
-/// \addtogroup bvcore_I_O_Data bvcore I/O Data
-/// \{
 
 /// \brief Path functions.
 class Path {

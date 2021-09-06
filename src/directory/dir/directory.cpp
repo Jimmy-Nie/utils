@@ -1,8 +1,8 @@
 
-#include "directory.h"
-#include "directory_scanner.h"
-#include "path.h"
-#include "share/exception.h"
+#include "directory/directory.h"
+#include "directory/directory_scanner.h"
+#include "text/path.h"
+#include "exception/exception.h"
 
 #if defined(__MINGW32__) && !defined(_WIN32_IE)
 #define _WIN32_IE 0x0500
