@@ -1,6 +1,7 @@
-#include "text/string_help.h"
+#include "text/strings.h"
 #include "iodata/databuffer.h"
 #include "iodata/memory_device.h"
+#include "text/file.h"
 #include "spdlog_impl.h"
 #include <iostream>
 using namespace jm;
@@ -17,22 +18,13 @@ void test_databuf() {
         len += str.length();
     }
     test_logi("The size={}, capacity={}, data: {}", buf.get_size(), buf.get_capacity(), buf.get_data());
-
-    ///2. Data buffer store the hex, and get the data by type
-    DataBuffer buf2(256);
-    for(int i=0; i<4; i++) {
-        buf2[i] = i;
-        std::cout <<  (buf[i]) << std::endl;
-    }
-
-     std::cout << std::hex << *(buf.get_data<int>()) << std::endl;
 }
 
 void test_memory_device() {
     MemoryDevice mem(256);
     for(int i=1; i<100; i++)
-        mem.write_var<int>(i);
-    test_logi("The seek position:{}", mem.get_position());
+        mem.write_var<int>(i*10);
+    test_logi("The seek position:{}, size:{}", mem.get_position(), mem.get_size());
 
     ///make sure has this step, for write(the pointer forward to the write size), read(read from current pointer)
     ///remove this, cause exception
@@ -44,7 +36,9 @@ void test_memory_device() {
 
 int main() {
     JMLog::init();
+
     //test_databuf();
     test_memory_device();
+
     return 0;
 }

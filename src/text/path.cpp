@@ -190,7 +190,7 @@ std::string Path::make_relative(const std::string &base_path, const std::string 
             bool same_element = false;
             if (path_type == path_type_file) {
 #ifdef WIN32
-                same_element = (StringHelp::compare(base_element, absolute_element, true) == 0);
+                same_element = (Strings::compare(base_element, absolute_element, true) == 0);
 #else
                 same_element = (base_element == absolute_element);
 #endif

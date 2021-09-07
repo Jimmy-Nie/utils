@@ -1,8 +1,8 @@
 
 #pragma once
 
-#include "iodevice.h"
-#include "databuffer.h"
+#include "iodata/iodevice.h"
+#include "iodata/databuffer.h"
 
 namespace jm
 {
@@ -11,18 +11,6 @@ namespace jm
 class File : public IODevice
 {
 public:
-    /// \brief Loads an UTF-8 text file into a string.
-    static std::string read_text(const std::string &filename);
-
-    /// \brief Loads an file into a byte buffer.
-    static DataBuffer read_bytes(const std::string &filename);
-
-    /// \brief Saves an UTF-8 text string to file.
-    static void write_text(const std::string &filename, const std::string &text, bool write_bom = false);
-
-    /// \brief Saves a byte buffer to file.
-    static void write_bytes(const std::string &filename, const DataBuffer &bytes);
-
     /// \brief Access flags.
     /** <p>File access types available.</p>*/
     enum AccessFlags
@@ -92,6 +80,18 @@ public:
     void close();
 
 public:
+    /// \brief Loads an UTF-8 text file into a string.
+    static std::string read_text(const std::string &filename);
+
+    /// \brief Loads an file into a byte buffer.
+    static DataBuffer read_bytes(const std::string &filename);
+
+    /// \brief Saves an UTF-8 text string to file.
+    static void write_text(const std::string &filename, const std::string &text, bool write_bom = false);
+
+    /// \brief Saves a byte buffer to file.
+    static void write_bytes(const std::string &filename, const DataBuffer &bytes);
+
     /// \brief Copy a file.
     ///
     /// \param from Where to copy from

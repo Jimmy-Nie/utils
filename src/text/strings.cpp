@@ -3,11 +3,11 @@
 #include <cstring>
 #include <map>
 
-#include "string_help.h"
+#include "strings.h"
 
 namespace jm {
 
-std::map<std::string, std::string> StringHelp::split_by_delimiter(const std::string &src, const std::string &delimiter) {
+std::map<std::string, std::string> Strings::split_by_delimiter(const std::string &src, const std::string &delimiter) {
     std::map<std::string, std::string> str_map;
 
     /// 1. Check the map string
@@ -31,7 +31,7 @@ std::map<std::string, std::string> StringHelp::split_by_delimiter(const std::str
     return str_map;
 }
 
-std::vector<std::string> StringHelp::split_text(const std::string &text, const std::string &split_string,
+std::vector<std::string> Strings::split_text(const std::string &text, const std::string &split_string,
                                                 bool skip_empty) {
     std::vector<std::string> result;
     std::string::size_type end_pos = 0, begin_pos = 0;
@@ -50,7 +50,7 @@ std::vector<std::string> StringHelp::split_text(const std::string &text, const s
     return result;
 }
 
-std::string StringHelp::get_file_name(const std::string &text, bool suffix) {
+std::string Strings::get_file_name(const std::string &text, bool suffix) {
     std::string::size_type first_char = text.find_last_of("/\\");
     if (first_char == std::string::npos)
         return text;
@@ -66,7 +66,7 @@ std::string StringHelp::get_file_name(const std::string &text, bool suffix) {
     return file_name.substr(0, last_char);
 }
 
-std::string StringHelp::replace_string(const std::string &text, const std::string &sub, const std::string &after) {
+std::string Strings::replace_string(const std::string &text, const std::string &sub, const std::string &after) {
     int p = 0;
     std::string ret = text;
     while ((p = ret.find(sub, p)) != std::string::npos) {
@@ -76,7 +76,7 @@ std::string StringHelp::replace_string(const std::string &text, const std::strin
     return ret;
 }
 
-std::string StringHelp::trim(const std::string &text) {
+std::string Strings::trim(const std::string &text) {
     std::string::size_type first_char = text.find_first_not_of(" \r\n\t");
     std::string::size_type last_char = text.find_last_not_of(" \r\n\t");
     if (first_char == std::string::npos)
@@ -86,7 +86,7 @@ std::string StringHelp::trim(const std::string &text) {
     return text.substr(first_char, last_char - first_char + 1);
 }
 
-int StringHelp::compare(const std::string &a, const std::string &b, bool case_sensitive) {
+int Strings::compare(const std::string &a, const std::string &b, bool case_sensitive) {
 #ifdef WIN32
     if (case_sensitive)
         return strcmp(a.c_str(), b.c_str());
@@ -100,7 +100,7 @@ int StringHelp::compare(const std::string &a, const std::string &b, bool case_se
 #endif
 }
 
-std::string StringHelp::string_to_upper(const std::string &s) {
+std::string Strings::string_to_upper(const std::string &s) {
     std::string result = s;
     std::string::size_type index, size;
     size = result.length();
@@ -110,7 +110,7 @@ std::string StringHelp::string_to_upper(const std::string &s) {
     return result;
 }
 
-std::string StringHelp::string_to_lower(const std::string &s) {
+std::string Strings::string_to_lower(const std::string &s) {
     std::string result = s;
     std::string::size_type index, size;
     size = result.length();
@@ -120,7 +120,7 @@ std::string StringHelp::string_to_lower(const std::string &s) {
     return result;
 }
 
-std::string StringHelp::remove_trailing_zeros(std::string text) {
+std::string Strings::remove_trailing_zeros(std::string text) {
     if (text.find_first_of('.') != std::string::npos) {
         while (!text.empty() && text.back() == '0')
             text.pop_back();
@@ -130,7 +130,7 @@ std::string StringHelp::remove_trailing_zeros(std::string text) {
     return text;
 }
 
-std::optional<long double> StringHelp::string_to_ld(const std::string &value) {
+std::optional<long double> Strings::string_to_ld(const std::string &value) {
     try {
         return std::stold(value);
     } catch (...) {
@@ -138,7 +138,7 @@ std::optional<long double> StringHelp::string_to_ld(const std::string &value) {
     }
 }
 
-std::optional<unsigned long long> StringHelp::string_to_ull(const std::string &value, int base) {
+std::optional<unsigned long long> Strings::string_to_ull(const std::string &value, int base) {
     try {
         return std::stoull(value, nullptr, base);
     } catch (...) {
@@ -146,7 +146,7 @@ std::optional<unsigned long long> StringHelp::string_to_ull(const std::string &v
     }
 }
 
-std::optional<long long> StringHelp::string_to_ll(const std::string &value, int base) {
+std::optional<long long> Strings::string_to_ll(const std::string &value, int base) {
     try {
         return std::stoll(value, nullptr, base);
     } catch (...) {
@@ -154,33 +154,33 @@ std::optional<long long> StringHelp::string_to_ll(const std::string &value, int 
     }
 }
 
-std::optional<bool> StringHelp::string_to_bool(const std::string &value) {
-    auto is_str = [&](const std::string &str) { return StringHelp::compare(value, str, false) == 0; };
+std::optional<bool> Strings::string_to_bool(const std::string &value) {
+    auto is_str = [&](const std::string &str) { return Strings::compare(value, str, false) == 0; };
     return is_str("true") || is_str("yes") || is_str("on") || value == "1";
 }
 
-std::string StringHelp::left(const std::string &s, size_t n) {
+std::string Strings::left(const std::string &s, size_t n) {
     if (n >= s.size()) {
         return s;
     }
     return s.substr(0, n);
 }
 
-std::string StringHelp::right(const std::string &s, size_t n) {
+std::string Strings::right(const std::string &s, size_t n) {
     if (n >= s.size()) {
         return s;
     }
     return s.substr(s.size() - n);
 }
 
-bool StringHelp::start_with(const std::string &a, const std::string &b) {
+bool Strings::start_with(const std::string &a, const std::string &b) {
     if (b.empty() && !a.empty()) {
         return false;
     }
     return left(a, b.size()) == b;
 }
 
-bool StringHelp::end_with(const std::string &a, const std::string &b) {
+bool Strings::end_with(const std::string &a, const std::string &b) {
     if (b.empty() && !a.empty()) {
         return false;
     }

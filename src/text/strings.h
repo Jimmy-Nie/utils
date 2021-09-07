@@ -10,7 +10,7 @@ namespace jm
 {
 
 /// \brief String helper functions.
-class StringHelp {
+class Strings {
 public:
     /**
     * @brief: split the string by delimiter, find the first delimiter

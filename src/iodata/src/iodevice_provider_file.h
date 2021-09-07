@@ -1,7 +1,7 @@
 #pragma once
 
 #include "iodata/iodevice_provider.h"
-#include "iodata/file.h"
+#include "text/file.h"
 #include "iodata/databuffer.h"
 
 namespace jm

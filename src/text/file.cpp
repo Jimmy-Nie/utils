@@ -1,8 +1,7 @@
-#include "iodata/file.h"
+#include "file.h"
 #include "text/path.h"
 #include "exception/exception.h"
-#include "text/string_help.h"
-#include "iodevice_provider_file.h"
+#include "iodata/src/iodevice_provider_file.h"
 
 #ifndef WIN32
 #include <unistd.h>
@@ -63,7 +62,7 @@ File::File()
 
 File::File(
     const std::string &filename)
-    : IODevice(new IODeviceProvider_File(Path::normalize(filename, Path::path_type_file), open_existing, access_read, share_all, 0))
+    : IODevice(new IODeviceProvider_File(Path::normalize(filename, Path::path_type_file), open_always, access_read, share_all, 0))
 {
 }
 
@@ -84,7 +83,7 @@ bool File::open(
     const std::string &filename)
 {
     auto provider = dynamic_cast<IODeviceProvider_File*>(get_provider());
-    return provider->open(Path::normalize(filename, Path::path_type_file), open_existing, access_read, share_all, 0);
+    return provider->open(Path::normalize(filename, Path::path_type_file), open_always, access_read, share_all, 0);
 }
 
 bool File::open(
