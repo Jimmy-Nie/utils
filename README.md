@@ -50,6 +50,8 @@
 
 ###2. 数据格式类
 #### 1) json
+> - 迄今为止，我用到的最好用的json for C++，没有中之一
+> - github: https://github.com/nlohmann/json
 #### 2) protobuf
 
 ###3. 文本处理类
