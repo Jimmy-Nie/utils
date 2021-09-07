@@ -36,9 +36,9 @@ public:
     /// \brief Throw an exception if this object is invalid.
     void throw_if_null() const;
 
-    /// \brief Returns the size of data stream.
-    /** <p>Returns SIZE_MAX if the size is unknown.</p>
-        \return The size (SIZE_MAX if size is unknown)*/
+    /// \brief Returns the size of data stream.(in char type)
+    /// Returns SIZE_MAX if the size is unknown.</p>
+    /// \return The size (SIZE_MAX if size is unknown)*/
     size_t get_size() const;
 
     /// \brief Returns the position in the data stream.

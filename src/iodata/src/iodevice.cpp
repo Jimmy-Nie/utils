@@ -3,7 +3,7 @@
 #include "iodata/iodevice_provider.h"
 #include "system/endian.h"
 #include "exception/exception.h"
-
+#include <iostream>
 namespace jm
 {
 

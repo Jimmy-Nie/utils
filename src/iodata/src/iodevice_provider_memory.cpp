@@ -1,6 +1,6 @@
 #include "iodevice_provider_memory.h"
 #include <cstring>
-
+#include <iostream>
 namespace jm
 {
 

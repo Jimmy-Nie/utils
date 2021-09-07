@@ -28,9 +28,23 @@ void test_databuf() {
      std::cout << std::hex << *(buf.get_data<int>()) << std::endl;
 }
 
+void test_memory_device() {
+    MemoryDevice mem(256);
+    for(int i=1; i<100; i++)
+        mem.write_var<int>(i);
+    test_logi("The seek position:{}", mem.get_position());
+
+    ///make sure has this step, for write(the pointer forward to the write size), read(read from current pointer)
+    ///remove this, cause exception
+    mem.seek(0);
+
+    for(int i=0; i<30; i++)
+        test_logi("The num: {}", mem.read_var<int>());
+}
+
 int main() {
     JMLog::init();
-    test_databuf();
-
+    //test_databuf();
+    test_memory_device();
     return 0;
 }
