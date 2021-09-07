@@ -43,6 +43,7 @@ FILE(GLOB_RECURSE IO_SRC    "${SRC_DIR}/iodata/*.h*"            "${SRC_DIR}/ioda
 FILE(GLOB_RECURSE SYS_SRC   "${SRC_DIR}/system/*.h*"            "${SRC_DIR}/system/*.c*")
 FILE(GLOB_RECURSE TEXT_SRC  "${SRC_DIR}/text/*.h*"              "${SRC_DIR}/text/*.c*")
 FILE(GLOB_RECURSE TIMER_SRC "${SRC_DIR}/timer/*.h*"             "${SRC_DIR}/timer/*.c*")
+FILE(GLOB_RECURSE GPIO_SRC "${SRC_DIR}/gpio/*.h*"             "${SRC_DIR}/gpio/*.c*")
 
 #-----------------------------------------------------------
 # Generate executable file
@@ -52,6 +53,7 @@ ADD_LIBRARY(Log         ${SPDLOG_SOURCE})
 ADD_LIBRARY(Exception   ${EXC_SRC})
 ADD_LIBRARY(Dir         ${DIR_SRC})
 ADD_LIBRARY(IOdata      ${IO_SRC})
+ADD_LIBRARY(GPIO        ${GPIO_SRC})
 ADD_LIBRARY(System      ${SYS_SRC})
 ADD_LIBRARY(Text        ${TEXT_SRC})
 ADD_LIBRARY(Timer       ${TIMER_SRC})
