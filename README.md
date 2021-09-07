@@ -69,6 +69,8 @@
 > - github: https://github.com/martinmoene/optional-lite
 
 #### 5) enum
+> - 简单易用的枚举，可以自由转化为string，int，enum等，具体可见github
+> - github: https://github.com/aantron/better-enums
 #### 6) yaml
 
 ###4. 通信类：，，
