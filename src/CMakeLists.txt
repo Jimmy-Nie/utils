@@ -25,6 +25,7 @@ INCLUDE_DIRECTORIES(
 
 FILE(GLOB_RECURSE OPTIONAL_SRC "${SRC_DIR}/optional/*.h*")
 FILE(GLOB_RECURSE PUBSUB_SRC "${SRC_DIR}/pubsub/*.h*")
+FILE(GLOB_RECURSE EVENT_SRC "${SRC_DIR}/event/*.h*")
 FILE(GLOB_RECURSE THREAD_SRC "${SRC_DIR}/thread/*.h*")
 
 FILE(GLOB_RECURSE SPDLOG_SOURCE "${SRC_DIR}/spdlog/inc/*.h*"    "${SRC_DIR}/spdlog/src/*.c*")
@@ -43,7 +44,8 @@ FILE(GLOB_RECURSE IO_SRC    "${SRC_DIR}/iodata/*.h*"            "${SRC_DIR}/ioda
 FILE(GLOB_RECURSE SYS_SRC   "${SRC_DIR}/system/*.h*"            "${SRC_DIR}/system/*.c*")
 FILE(GLOB_RECURSE TEXT_SRC  "${SRC_DIR}/text/*.h*"              "${SRC_DIR}/text/*.c*")
 FILE(GLOB_RECURSE TIMER_SRC "${SRC_DIR}/timer/*.h*"             "${SRC_DIR}/timer/*.c*")
-FILE(GLOB_RECURSE GPIO_SRC "${SRC_DIR}/gpio/*.h*"             "${SRC_DIR}/gpio/*.c*")
+FILE(GLOB_RECURSE GPIO_SRC  "${SRC_DIR}/gpio/*.h*"               "${SRC_DIR}/gpio/*.c*")
+FILE(GLOB_RECURSE EVENT_SRC "${SRC_DIR}/event/*.h*"               "${SRC_DIR}/event/*.c*")
 
 #-----------------------------------------------------------
 # Generate executable file
@@ -57,6 +59,7 @@ ADD_LIBRARY(GPIO        ${GPIO_SRC})
 ADD_LIBRARY(System      ${SYS_SRC})
 ADD_LIBRARY(Text        ${TEXT_SRC})
 ADD_LIBRARY(Timer       ${TIMER_SRC})
+ADD_LIBRARY(Event       ${EVENT_SRC})
 
 TARGET_LINK_LIBRARIES(Exception -ldl)
 TARGET_LINK_LIBRARIES(Timer Exception)
@@ -64,3 +67,5 @@ TARGET_LINK_LIBRARIES(Text Exception IOdata -lpthread)
 TARGET_LINK_LIBRARIES(Dir Exception Text -lpthread)
 TARGET_LINK_LIBRARIES(System Exception -lpthread)
 TARGET_LINK_LIBRARIES(IOdata Exception Text -lpthread)
+TARGET_LINK_LIBRARIES(IOdata Exception)
+TARGET_LINK_LIBRARIES(Event Exception IOdata Log)
