@@ -47,6 +47,7 @@
 #### 1) json
 > - 迄今为止，我用到的最好用的json for C++，没有中之一
 > - github: https://github.com/nlohmann/json
+
 #### 2) protobuf
 
 ###3. 文本处理类
@@ -84,6 +85,12 @@
 #### 2) event
 > - 事件处理，可做事件关联，参数可变
 > - 当事件到达时，执行对应的操作（事前已经定义完成）
+
+#### 3) brain_tree
+> - 行为树，是一个包含逻辑节点和行为节点的树结构；
+> - 优点1：行为树由于引入了逻辑节点，它的转换条件更加少（线更少，更清晰），让拓展AI变得更加容易；
+> - 优点2：行为的重用（reuse)。
+> - github: https://github.com/arvidsson/BrainTree
 
 ### 5. IO类：
 #### 1) iodata
